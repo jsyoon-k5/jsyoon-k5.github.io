@@ -1,80 +1,68 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
-
-/* Navigation Bar */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #333;
-    z-index: 1000;
-    text-align: center;
-}
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-.navbar ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    display: inline-block;
-}
-
-.navbar ul li a:hover {
-    background-color: #575757;
-}
-
-/* Section Styles */
+/* General Styles for all sections */
 .section {
     padding: 100px 20px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-#about {
-    background-color: #f0f0f0;
+/* Container for image and text in the about section */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
-#research {
-    background-color: #e0e0e0;
+/* Portrait image styles */
+.portrait img {
+    width: 300px; /* Adjust based on desired width */
+    height: 400px; /* 3:4 aspect ratio */
+    object-fit: cover;
+    border-radius: 10px; /* Optional rounded corners */
+    margin-right: 40px; /* Space between image and text */
 }
 
-#publications {
-    background-color: #d0d0d0;
+/* Text content styles */
+.text-content {
+    max-width: 700px;
+    text-align: left;
 }
 
-#contact {
-    background-color: #c0c0c0;
-}
-
-/* Customizable Font and Color */
-h1 {
+.text-content h1 {
     font-size: 2.5em;
-    color: #333;
+    margin-bottom: 20px;
 }
 
-p {
+.text-content p {
     font-size: 1.2em;
-    color: #555;
+    line-height: 1.6;
 }
 
-/* Responsive Design */
-@media only screen and (max-width: 600px) {
-    .navbar ul li {
-        display: block;
-        margin: 10px 0;
+/* Responsive Design - for smaller screens */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portrait img {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 250px;
+        height: 333px;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    .text-content h1 {
+        font-size: 2em;
     }
 }
