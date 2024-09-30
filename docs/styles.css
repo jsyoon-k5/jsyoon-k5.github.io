@@ -52,10 +52,12 @@
     }
 
     .portrait img {
-        margin-right: 0;
-        margin-bottom: 20px;
-        width: 250px;
-        height: 333px;
+        width: 100%; 
+        max-width: 500px; 
+        height: auto; 
+        object-fit: cover; 
+        border-radius: 10px;
+        margin-right: 40px;
     }
 
     .text-content {
