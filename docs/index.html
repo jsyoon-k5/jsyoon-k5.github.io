@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Researcher Personal Homepage</title>
+    <title>June-Seop Yoon</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <ul>
             <li><a href="#about">June-Seop Yoon</a></li>
             <li><a href="#publications">Publications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
+    </nav> -->
 
     <!-- Sections -->
     <section id="about" class="section">
@@ -25,24 +25,139 @@
             </div>
             <div class="text-content">
                 <h1>June-Seop Yoon</h1>
-                <p>I am a Ph.D. student at Yonsei University's Esports & High Performance HCI Lab, 
+                <p>I am a Ph.D. student at <a href="https://esports.yonsei.ac.kr/" target="_blank">Yonsei Esports & High Performance HCI Lab</a>, 
                     advised by Prof. Byungjoo Lee. My research focuses on computational models of Esports 
-                    players and their applications in the Esports industry, such as player training, evaluation, 
-                    and performance analysis. Specifically, I am interested in understanding what enables 
-                    professional players to outperform others.</p>
+                    players and their applications in the Esports industry, such as player training, performance evaluation, 
+                    and performance analysis. Specifically, I aim to understand what enables professional FPS players 
+                    to achieve outstanding performance through computational models. I received my B.Sc. in Computer Science from Yonsei University.</p>
             </div>
         </div>
     </section>
 
     <section id="publications" class="section">
         <h1>Publications</h1>
-        <p>List your publications or link to your Google Scholar, ORCID, etc.</p>
+        
+        <!-- First Author Papers -->
+        <div id="first-author" class="subsection">
+            <h2>First Author Papers</h2>
+            
+            <div class="publication-item">
+                <div class="thumbnail">
+                    <img src="thumbnail_tbu.png" alt="Thumbnail for CHI '25 Paper">
+                </div>
+                <div class="text-content">
+                    <a>Under Review: CHI '25</a> 
+                    <br>
+                    <span><strong>June-Seop Yoon</strong> (first co-author), another first co-author, 6 more authors</span>
+                </div>
+            </div>
+            
+            <div class="publication-item">
+                <div class="thumbnail">
+                    <img src="thumbnail_tbu.png" alt="Thumbnail for IJHCS 2025 Paper">
+                </div>
+                <div class="text-content">
+                    <a>Under Review: IJHCS '25, Collaboration with Nvidia</a>
+                    <br>
+                    <span><strong>June-Seop Yoon</strong>, Hee-Seung Moon, Ben Boudaoud, Josef Spjut, Iuri Frosio, Byungjoo Lee, Joohwan Kim</span>
+                </div>
+            </div>
+            
+            <div class="publication-item">
+                <div class="thumbnail">
+                    <img src="tb_chi22.png" alt="Thumbnail for CHI 2022 Paper">
+                </div>
+                <div class="text-content">
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3491102.3517540" target="_blank">
+                        How AI-Based Training Affected the Performance of Professional Go Players
+                    </a>
+                    <br>
+                    <span>Jimoon Kang, <strong>June-Seop Yoon</strong> (first co-author), Byungjoo Lee</span>
+                    <br>
+                    <span>ACM CHI Conference on Human Factors in Computing Systems (CHI), 2022</span>
+                </div>
+            </div>
+        </div>
+
+    
+        <!-- Co-Author Papers -->
+        <div id="co-author" class="subsection">
+            <h2>Co-Author Papers</h2>
+
+            <div class="publication-item">
+                <div class="text-content">
+                    <a>Under Review: CHI '25 Paper</a>
+                    <br>
+                    <span>First author, Second author, <strong>June-Seop Yoon</strong>, 3 more authors</span>
+                    <br>
+                    <em>Role: I primarily assisted with the technical implementation.</em>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="text-content">
+                    <a href="https://dl.acm.org/doi/full/10.1145/3613904.3642797" target="_blank">
+                        Quantifying Wrist-Aiming Habits with A Dual-Sensor Mouse: Implications for Player Performance and Workload
+                    </a>
+                    <br>
+                    <span>Donghyeon Kang, Namsub Kim, Daekaun Kang, <strong>June-Seop Yoon</strong>, Sunjun Kim, Byungjoo Lee</span>
+                    <br>
+                    <span>ACM CHI Conference on Human Factors in Computing Systems (CHI), 2024</span>
+                    <br>
+                    <em>Role: I primarily assisted in designing the user experiment and worked on most of the figures (visualizations).</em>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="text-content">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/9417724" target="_blank">
+                        Walking Outside the Box: Estimation of Detection Thresholds for Non-Forward Steps
+                    </a>
+                    <br>
+                    <span>Yong-Hun Cho, Dae-Hong Min, Jin-Suk Huh, Se-Hee Lee, <strong>June-Seop Yoon</strong>, In-Kwon Lee</span>
+                    <br>
+                    <span>IEEE Virtual Reality and 3D User Interfaces (VR), 2021</span>
+                    <br>
+                    <em>Role: I primarily assisted in designing and conducting the VR user experiment.</em>
+                </div>
+            </div>
+        </div>
+
     </section>
 
-    <section id="contact" class="section">
-        <h1>Contact</h1>
-        <p>Provide a way for people to reach out to you, such as an email address or social media links.</p>
+    <section id="skills" class="section">
+        <h1>Skills</h1>
+        
+        <!-- Programming Skills -->
+        <div id="programming-skills" class="subsection">
+            <h2>Programming & Research</h2>
+            <p>Python (numpy, pandas, scipy, matplotlib, PyTorch, Stable-baseline3), C++, Matlab</p>
+            <p>User Experiment Design, Computational User Modeling, Reinforcement Learning, Statistical Analysis</p>
+        </div>
+    
+        <!-- Tools -->
+        <div id="tools" class="subsection">
+            <h2>Tools</h2>
+            <div class="tool-item">
+                <div class="text-content">
+                    <p>Adobe Photoshop, Adobe Illustrator, Sony Vegas, Gazepoint API (eye-tracker)</p>
+                    <p class="logo-description"><strong>I designed the logo for the Yonsei Esports & High-Performance HCI Lab.</strong></p>
+                </div>
+                <div class="thumbnail">
+                    <img src="yeslab_logo.png" alt="Yonsei Esports & HCI Lab Logo">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Languages -->
+        <div id="languages" class="subsection">
+            <h2>Languages</h2>
+            <p>Korean (Native), English (Fluent), Japanese (Intermediate)</p>
+        </div>
     </section>
+    
+    
+    
 
 </body>
 </html>
