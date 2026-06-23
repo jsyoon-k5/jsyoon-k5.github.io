@@ -1,0 +1,43 @@
+:root {
+    /* Edit this file for visual-only changes: colors, fonts, spacing, widths, and radii. */
+    --font-heading: Georgia, "Times New Roman", serif;
+    --font-body: Arial, Helvetica, sans-serif;
+
+    --color-page: #fbfbf8;
+    --color-surface: #ffffff;
+    --color-surface-muted: #eef4f1;
+    --color-hero: #202724;
+    --color-hero-soft: #2f3d37;
+    --color-text: #202124;
+    --color-text-muted: #5e655f;
+    --color-text-on-dark: #f8faf7;
+    --color-border: #d9ded8;
+    --color-accent: #23745e;
+    --color-accent-strong: #185747;
+    --color-accent-soft: #d7eae3;
+    --color-warm: #b15f3f;
+    --color-disabled: #8b928d;
+
+    --shadow-card: 0 16px 32px rgba(22, 28, 24, 0.08);
+    --shadow-subtle: 0 8px 20px rgba(22, 28, 24, 0.06);
+
+    --page-max-width: 1120px;
+    --content-max-width: 840px;
+    --hero-portrait-width: 270px;
+    --publication-thumbnail-width: 260px;
+    --section-padding-y: 84px;
+    --section-padding-x: 24px;
+    --card-radius: 8px;
+    --button-radius: 999px;
+    --border-width: 1px;
+    --nav-height: 64px;
+}
+
+@media (max-width: 760px) {
+    :root {
+        --section-padding-y: 56px;
+        --section-padding-x: 18px;
+        --hero-portrait-width: 220px;
+        --publication-thumbnail-width: 100%;
+    }
+}

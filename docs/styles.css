@@ -1,286 +1,543 @@
-/* General Styles for all sections */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #333; /* 네비게이션 바 배경색 */
-    z-index: 1000;
-    text-align: center;
-    padding: 10px 0; /* 상하 패딩으로 높이 조정 */
+* {
+    box-sizing: border-box;
 }
 
-.navbar ul {
-    list-style-type: none;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
-    padding: 0;
-}
-
-.navbar ul li {
-    display: inline-block;
-    margin-right: 20px; /* 항목 간 간격 */
-}
-
-.navbar ul li a {
-    color: white; /* 네비게이션 링크의 텍스트 색상 */
-    text-decoration: none; /* 기본 밑줄 제거 */
-    font-size: 1.2em; /* 텍스트 크기 */
-    padding: 10px 15px; /* 링크의 클릭 영역 확대 */
-    display: inline-block;
-}
-
-
-.section {
-    padding: 100px 20px;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* Container for image and text in the about section */
-#about .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-/* Portrait image styles */
-#about .portrait img {
-    width: 270px; /* Adjust based on desired width */
-    height: 360px; /* 3:4 aspect ratio */
-    object-fit: cover;
-    border-radius: 0px; /* Optional rounded corners */
-    margin-right: 40px; /* Space between image and text */
-}
-
-/* Text content styles */
-#about .text-content {
-    max-width: 800px;
-    text-align: left;
-}
-
-#about .text-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-#about .text-content p {
-    font-size: 1.2em;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
     line-height: 1.6;
 }
 
-/* Background colors for sections */
-#about {
-    background-color: #222222; /* Light gray */
-}
-#about h1 {
-    font-size: 3em;
-    color: #ffffff; 
-    font-family: 'Georgia', serif; 
-    margin-bottom: 20px;
-}
-#about p {
-    font-size: 1.3em; 
-    color: #ffffff; 
-    font-family: 'Arial', sans-serif; 
-    line-height: 1.8;
-}
-#about a {
-    color: #ffcc00;
-    text-decoration: underline;
+img,
+iframe,
+video {
+    display: block;
+    max-width: 100%;
 }
 
-#about a:hover {
-    color: #ffff00;
+a {
+    color: inherit;
+}
+
+.skip-link {
+    position: absolute;
+    left: 16px;
+    top: -48px;
+    z-index: 20;
+    background: var(--color-accent);
+    color: white;
+    padding: 8px 12px;
+    border-radius: var(--card-radius);
     text-decoration: none;
 }
 
-#publications {
-    background-color: #ffffff; /* Slightly darker gray */
+.skip-link:focus {
+    top: 16px;
 }
 
-/* Publications Title Styling */
-#publications h1 {
-    font-size: 2.5em; /* Increase the font size */
-    font-family: 'Georgia', serif; /* Change to a different font (you can choose another) */
-    font-weight: bold; /* Ensure the title is bold */
-    text-align: left; /* Left-align the title */
-    margin-bottom: 20px; /* Add some spacing below the title */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    min-height: var(--nav-height);
+    background: rgba(251, 251, 248, 0.92);
+    border-bottom: var(--border-width) solid var(--color-border);
+    backdrop-filter: blur(10px);
 }
 
-
-
-/* First Author Section - Unique styling for First Author papers */
-#first-author .publication-item {
-    display: flex; /* Flex layout for side-by-side alignment */
-    align-items: flex-start; /* Align items at the top */
-    margin-bottom: 20px;
-    max-width: 1200px; /* Limit the max width for the entire publication block */
-    margin-left: auto;
-    margin-right: auto; /* Center the entire publication item */
-}
-
-/* First Author Thumbnail Styling (4:3 aspect ratio, larger size) */
-#first-author .thumbnail {
-    width: 300px; /* Set a fixed width for the thumbnails */
-    height: auto; /* Automatically adjust height to maintain the image aspect ratio */
-    margin-right: 20px; /* Space between the thumbnail and the text */
-    flex-shrink: 0; /* Prevent thumbnails from shrinking below the set width */
-}
-
-#first-author .thumbnail img {
-    width: 100%; /* Ensure the image fills the thumbnail container */
-    height: auto; /* Maintain the aspect ratio (4:3 assumed) */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
-    image-rendering: crisp-edges;
-}
-
-/* First Author Title Styling - Larger and bold */
-#first-author .text-content a {
-    font-size: 1.3em; /* Slightly larger font size for titles */
-    font-weight: bold;
-    color: black; /* Keep the title black with no underline */
-    text-decoration: none;
-}
-
-#first-author .text-content {
-    text-align: left; /* Explicitly left-align text */
-}
-
-/* No hover effect for titles */
-#first-author .text-content a:hover {
-    color: black; /* No hover effect */
-    text-decoration: none;
-}
-
-/* Co-Author Section - Unique styling for Co-Author papers */
-#co-author .publication-item {
+.site-nav {
+    width: min(100%, var(--page-max-width));
+    min-height: var(--nav-height);
+    margin: 0 auto;
+    padding: 0 var(--section-padding-x);
     display: flex;
-    flex-direction: column; /* No thumbnail, so stack text vertically */
-    margin-bottom: 20px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto; /* Center the publication item */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
 }
 
-/* Co-Author Title Styling - Bold only, no increased font size */
-#co-author .text-content a {
-    font-size: 1.1em; /* Normal font size */
-    font-weight: bold; /* Bold only, no larger font size */
-    color: black;
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.nav-links a {
     text-decoration: none;
 }
 
-/* No hover effect for co-author titles */
-#co-author .text-content a:hover {
-    color: black;
-    text-decoration: none;
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--color-accent-strong);
 }
 
-
-#co-author .text-content {
-    text-align: left; /* Explicitly left-align text */
+.hero-section {
+    background:
+        linear-gradient(135deg, rgba(35, 116, 94, 0.2), rgba(177, 95, 63, 0.14)),
+        var(--color-hero);
+    color: var(--color-text-on-dark);
+    padding: calc(var(--section-padding-y) + 18px) var(--section-padding-x);
 }
 
-
-/* Skills Section Styling */
-#skills {
-    background-color: #f5f5f5;
-    padding: 50px 20px;
-    text-align: center;
+.page-section {
+    padding: var(--section-padding-y) var(--section-padding-x);
 }
 
-
-#skills h1 {
-    font-size: 2.5em;
-    font-family: 'Georgia', serif;
-    font-weight: bold;
-    margin-bottom: 20px;
+.section-muted {
+    background: var(--color-surface-muted);
 }
 
-#skills .subsection p {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.section-inner {
+    width: min(100%, var(--page-max-width));
+    margin: 0 auto;
 }
 
-#skills h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(180px, var(--hero-portrait-width)) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(32px, 7vw, 84px);
 }
 
-#skills h3 {
-    font-size: 1.2em; /* Slightly smaller font for the description */
+.portrait-frame {
+    width: var(--hero-portrait-width);
+    max-width: 100%;
+    justify-self: center;
+    box-shadow: var(--shadow-card);
+}
+
+.portrait-frame img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.hero-copy {
+    max-width: var(--content-max-width);
+}
+
+.eyebrow,
+.status-label {
+    margin: 0 0 10px;
+    color: var(--color-accent-soft);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.hero-copy h1,
+.section-heading h1 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.12;
+}
+
+.hero-copy h1 {
+    font-size: clamp(2.5rem, 7vw, 4.8rem);
+}
+
+.hero-copy p {
+    margin: 18px 0 0;
+    color: rgba(248, 250, 247, 0.9);
+    font-size: 1.08rem;
+}
+
+.hero-copy a:not(.button-link) {
+    color: #f4d182;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-copy .cv-updated {
     margin-top: 10px;
+    color: rgba(248, 250, 247, 0.72);
+    font-size: 0.92rem;
 }
 
-/* Paragraph Text Styling - Compact Line Spacing */
-#skills p {
-    font-size: 1.2em;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.4; /* Reduce line spacing */
-    color: #333;
+.button-link,
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    text-decoration: none;
+    font-weight: 700;
 }
 
-#tools .tool-item {
-    display: flex; /* Align text and image side by side */
-    justify-content: flex-start; /* Left-align the text and image */
-    align-items: center; /* Vertically align the items */
-    gap: 20px; /* Space between text and image */
-    text-align: center; /* Override center alignment for the text */
+.button-link {
+    padding: 8px 16px;
+    border-radius: var(--button-radius);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: var(--color-text-on-dark);
 }
 
-/* Image Styling for Tools Section */
-#tools .thumbnail {
-    width: 100px; /* Fixed width for logo */
-    height: 100px; /* Fixed height */
+.button-link.is-primary {
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent-soft);
+    color: var(--color-accent-strong);
 }
 
-#tools .thumbnail img {
+.button-link:hover,
+.button-link:focus-visible {
+    transform: translateY(-1px);
+}
+
+.section-heading {
+    max-width: var(--content-max-width);
+    margin-bottom: 34px;
+}
+
+.section-heading h1 {
+    color: var(--color-text);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-heading p {
+    margin: 12px 0 0;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+}
+
+.publication-group + .publication-group {
+    margin-top: 54px;
+}
+
+.publication-group h2,
+.skill-card h2,
+.misc-body h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+.publication-group h2 {
+    margin-bottom: 18px;
+    font-size: 1.45rem;
+}
+
+.publication-list {
+    display: grid;
+    gap: 18px;
+}
+
+.co-author-papers .publication-list {
+    gap: 10px;
+}
+
+.publication-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 22px;
+    background: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-subtle);
+}
+
+.publication-card.has-thumbnail {
+    grid-template-columns: minmax(180px, var(--publication-thumbnail-width)) minmax(0, 1fr);
+}
+
+.publication-card.is-compact {
+    padding: 14px 16px;
+    gap: 10px;
+    box-shadow: none;
+}
+
+.publication-media {
+    margin: 0;
+    align-self: start;
+    background: #f2f4f1;
+}
+
+.publication-media img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.publication-body h3 {
+    margin: 0;
+    font-size: 1.22rem;
+    line-height: 1.35;
+}
+
+.publication-card.is-compact .publication-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 16px;
+    align-items: start;
+}
+
+.publication-card.is-compact .status-label,
+.publication-card.is-compact h3,
+.publication-card.is-compact .publication-authors,
+.publication-card.is-compact .publication-venue,
+.publication-card.is-compact .publication-note {
+    grid-column: 1;
+}
+
+.publication-card.is-compact .status-label {
+    margin-bottom: 4px;
+    font-size: 0.72rem;
+}
+
+.publication-card.is-compact h3 {
+    font-size: 1.02rem;
+    line-height: 1.28;
+}
+
+.publication-card.is-compact .publication-authors,
+.publication-card.is-compact .publication-venue,
+.publication-card.is-compact .publication-note {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.publication-body h3 a {
+    color: var(--color-text);
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.publication-body h3 a:hover,
+.publication-body h3 a:focus-visible {
+    color: var(--color-accent-strong);
+}
+
+.status-label {
+    color: var(--color-warm);
+}
+
+.publication-authors,
+.publication-venue,
+.publication-note {
+    margin: 8px 0 0;
+    color: var(--color-text-muted);
+}
+
+.publication-authors {
+    color: var(--color-text);
+}
+
+.publication-note {
+    color: var(--color-accent-strong);
+    font-weight: 700;
+}
+
+.publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.publication-card.is-compact .publication-links {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: center;
+    margin-top: 0;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+.text-link {
+    min-height: 26px;
+    padding: 3px 9px;
+    border: var(--border-width) solid var(--color-accent);
+    border-radius: var(--button-radius);
+    color: var(--color-accent-strong);
+    background: #f7fbf9;
+    font-size: 0.8rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+    background: var(--color-accent-soft);
+}
+
+.text-link.is-disabled {
+    border-color: var(--color-border);
+    color: var(--color-disabled);
+    background: #f4f5f3;
+}
+
+.skill-grid,
+.misc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.skill-card,
+.misc-card {
+    background: var(--color-surface);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-subtle);
+}
+
+.skill-card {
+    min-height: 100%;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.skill-card h2,
+.misc-body h2 {
+    font-size: 1.25rem;
+}
+
+.compact-list {
+    margin: 14px 0 0;
+    padding-left: 18px;
+    color: var(--color-text-muted);
+}
+
+.compact-list li + li {
+    margin-top: 8px;
+}
+
+.note {
+    margin: 14px 0 0;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.skill-image {
+    flex: 0 0 90px;
+    align-self: flex-start;
+}
+
+.skill-image img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.misc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.misc-card {
+    overflow: hidden;
+}
+
+.media-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--color-hero-soft);
+}
+
+.media-frame iframe,
+.media-frame img,
+.media-frame video,
+.media-placeholder {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure proper image fitting */
-}
-/* Description Styling */
-#tools .logo-description {
-    margin-left: 20px; /* Add space between the logo and description text */
-    font-size: 1.2em;
+    border: 0;
 }
 
+.media-frame img,
+.media-frame video {
+    object-fit: cover;
+}
 
+.media-placeholder {
+    display: grid;
+    place-items: center;
+    border: 1px dashed rgba(248, 250, 247, 0.5);
+    color: rgba(248, 250, 247, 0.9);
+    font-weight: 700;
+    text-align: center;
+    padding: 24px;
+}
 
+.misc-body {
+    padding: 22px;
+}
 
+.misc-body p {
+    margin: 12px 0 0;
+    color: var(--color-text-muted);
+}
 
-@media only screen and (max-width: 1200px) {
-
-    .navbar ul li {
-        display: block;
-        margin: 10px 0;
+@media (max-width: 920px) {
+    .publication-card.has-thumbnail,
+    .skill-grid,
+    .misc-grid {
+        grid-template-columns: 1fr;
     }
 
-    .container {
+    .skill-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .site-nav {
+        align-items: flex-start;
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
-    .portrait img {
-        width: 100%; 
-        max-width: 300px; 
-        height: auto; 
-        object-fit: cover; 
-        border-radius: 10px;
-        margin-right: 40px;
+    .nav-links {
+        justify-content: flex-start;
     }
 
-    .text-content {
-        text-align: center;
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: left;
     }
 
-    .text-content h1 {
-        font-size: 2em;
+    .portrait-frame {
+        justify-self: start;
+    }
+
+    .publication-card,
+    .skill-card,
+    .misc-body {
+        padding: 18px;
+    }
+
+    .publication-card.is-compact .publication-body {
+        display: block;
+    }
+
+    .publication-card.is-compact .publication-links {
+        justify-content: flex-start;
+        margin-top: 10px;
     }
 }
