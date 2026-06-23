@@ -15,7 +15,7 @@ window.HOMEPAGE_CONTENT = {
             url: "https://esports.yonsei.ac.kr/"
         },
         summary: [
-            "I am a Ph.D. candidate at High-Performance HCI Lab (formally Esports Lab) in Yonsei University, advised by Prof. Byungjoo Lee. I am expected to receive my Ph.D. in August 2026, and I received my B.Sc. in Computer Science from Yonsei University.",
+            "I am a Ph.D. candidate at High-Performance HCI Lab (formally Esports Lab) in Yonsei University, advised by Prof. Byungjoo Lee. I have completed my final defense and will be receiving my Ph.D. in August 2026. I received my B.Sc. in Computer Science from Yonsei University.",
             "My research develops computational models of esports players' behavior and applies them to behavior analysis, performance evaluation, and personalized training in gaming and esports. I focus mainly on first-person shooter (FPS) games, shaped by twenty years of experience as an FPS player and by the opportunity to bring more rigorous computational methods to player behavior analysis. I am currently exploring model-based player training, where computational behavior models guide personalized training protocols and feedback for players."
         ],
         cv: {

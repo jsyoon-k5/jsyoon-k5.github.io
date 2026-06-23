@@ -17,6 +17,7 @@
             <ul class="nav-links">
                 <li><a href="#video">Video</a></li>
                 <li><a href="#model">Model</a></li>
+                <li><a href="#validation">Validation</a></li>
                 <li><a href="#abstract">Abstract</a></li>
                 <li><a href="#bibtex">BibTeX</a></li>
             </ul>
@@ -28,11 +29,11 @@
             <div class="section-inner project-narrow">
                 <p class="eyebrow">Project Page</p>
                 <h1>Modeling visually-guided aim-and-shoot behavior in first-person shooters</h1>
-                <video class="project-video" src="../../assets/videos/aim_and_shoot_video.mp4" autoplay muted loop playsinline controls aria-label="Aim-and-shoot behavior demonstration video"></video>
+                <video class="project-video" src="../../assets/videos/aim_and_shoot_video.mp4?v=20260623h264" autoplay muted loop playsinline controls aria-label="Aim-and-shoot behavior demonstration video"></video>
                 <ul class="project-bullets">
-                    <li>Placeholder bullet point 1.</li>
-                    <li>Placeholder bullet point 2.</li>
-                    <li>Placeholder bullet point 3.</li>
+                    <li>We proposed a novel computational model simulating aim-and-shoot behavior, including hand and gaze behavior, of FPS players.</li>
+                    <li>Our model successfully reproduced the actual behavior of 20 players, including 10 professionals.</li>
+                    <li>Inferred parameters from the empirical dataset gave insight into how professionals might have achieved better aim-and-shoot performance than amateurs.</li>
                 </ul>
             </div>
         </section>
@@ -45,7 +46,11 @@
                 <figure class="project-figure">
                     <img src="../../assets/images/aim_and_shoot_arch.png" alt="Architecture diagram for the aim-and-shoot model">
                 </figure>
-                <p class="project-placeholder-text">Placeholder text for the model architecture figure.</p>
+                <div class="project-copy">
+                    <p>We model aim-and-shoot behavior as a virtual FPS player built under the computational rationality framework. Computational rationality explains human behavior as the outcome of an optimal policy under given constraints, including cognitive, physical, bodily, and environmental constraints, that maximizes expected utility or reward.</p>
+                    <p>The agent consists of four submodules. The <strong>Perceive</strong> module estimates the crosshair state and the target's position and speed. The <strong>Aim</strong> module creates mouse/camera motor plans to align the target with the crosshair. The <strong>Gaze</strong> module simulates gaze-control behavior during aiming. The <strong>Shoot</strong> module decides whether and when to click while the motor and gaze plans are being executed.</p>
+                    <p>A policy function coordinates those modules by choosing actions from the perceived state. We use deep reinforcement learning to train this policy because the model must discover reward-maximizing aim, gaze, and shoot decisions across many task conditions and player-parameter settings. In this implementation, reinforcement learning is the optimization method that turns the computational-rationality account into an executable behaving agent.</p>
+                </div>
 
                 <div class="table-wrap">
                     <table class="parameter-table">
@@ -116,11 +121,34 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="project-placeholder-text">Placeholder text for the model parameter table.</p>
+                <p class="project-placeholder-text">The eight parameters in the table are treated as latent player features. Four cognitive-noise parameters control motor noise, peripheral vision noise, speed perception noise, and internal clock precision; four reward parameters control the agent's success reward, failure penalty, and their temporal decay. Inferring these parameters from empirical behavior lets the model describe not only what a player did, but also which hidden cognitive or motivational factors may have shaped that behavior.</p>
             </div>
         </section>
 
-        <section id="abstract" class="project-section">
+        <section id="validation" class="project-section">
+            <div class="section-inner project-narrow">
+                <div class="section-heading">
+                    <h1>Validation</h1>
+                </div>
+                <div class="project-copy">
+                    <p>We validated the model against an empirical dataset collected from 20 FPS players: 10 active professionals and 10 amateur players. Participants performed a controlled aim-and-shoot task while their hand/camera behavior and gaze behavior were recorded.</p>
+                    <ul class="project-text-list">
+                        <li><strong>User study.</strong> The dataset captured real aim-and-shoot behavior across controlled target conditions, providing player-level trajectories and summary measures for model fitting. Professionals exhibited significantly shorter trial completion time (TCT) and higher accuracy (ACC) than amateurs.</li>
+                        <li><strong>Parameter inference.</strong> We used amortized inference to fit the simulation model to empirical behavior at real-time speed. Technically, a neural inference engine is trained on simulated behavior to recover the ground-truth parameters that generated each simulation. Once trained, the engine can infer a player's latent parameters from observed trajectories and summary statistics in a single forward pass. Per-parameter recovery performance reached an average <span class="math-symbol">R<sup>2</sup></span> of 0.81.</li>
+                    </ul>
+                </div>
+                <figure class="project-result-figure">
+                    <img src="../../assets/images/ans_inter_player_var.png" alt="Simulator-versus-participant correlations for TCT, ACC, and SCD">
+                    <figcaption>The proposed aim-and-shoot model closely replicated inter-player variability in human behavior. Simulated trial completion time (TCT), accuracy (ACC), and saccadic deviation (SCD) were strongly correlated with participant-level measurements.</figcaption>
+                </figure>
+                <figure class="project-result-figure">
+                    <img src="../../assets/images/ans_param_anova.png" alt="Parameter differences between professional and amateur FPS players">
+                    <figcaption>Inferred parameter differences between professionals and amateurs provide plausible explanations for performance differences observed in the user study. Asterisks indicate statistical significance (*: p &lt; 0.05, **: p &lt; 0.01, ***: p &lt; 0.001); star symbols indicate partial eta-squared effect size (&#9733;: &eta;<sub>p</sub><sup>2</sup> &ge; 0.01, &#9733;&#9733;: &eta;<sub>p</sub><sup>2</sup> &ge; 0.06, &#9733;&#9733;&#9733;: &eta;<sub>p</sub><sup>2</sup> &ge; 0.14).</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="abstract" class="project-section section-muted">
             <div class="section-inner project-narrow">
                 <div class="section-heading">
                     <h1>Abstract</h1>
@@ -129,7 +157,7 @@
             </div>
         </section>
 
-        <section id="bibtex" class="project-section section-muted">
+        <section id="bibtex" class="project-section">
             <div class="section-inner project-narrow">
                 <div class="section-heading">
                     <h1>BibTeX</h1>
