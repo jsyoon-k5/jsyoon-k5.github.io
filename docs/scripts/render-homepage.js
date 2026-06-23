@@ -64,7 +64,7 @@
 
     function primaryPublicationUrl(publication) {
         const links = publication.links || {};
-        const candidates = [links.doi, links.github, links.nvidia, links.paper];
+        const candidates = [links.project, links.doi, links.github, links.nvidia, links.paper];
         const found = candidates.find((link) => link && link.show && link.url);
         return found ? found.url : "";
     }

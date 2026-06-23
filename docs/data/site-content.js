@@ -32,6 +32,11 @@ window.HOMEPAGE_CONTENT = {
                 label: "GitHub",
                 url: "https://github.com/jsyoon-k5",
                 style: "secondary"
+            },
+            {
+                label: "Email",
+                url: "mailto:jsyoon.k5@gmail.com",
+                style: "secondary"
             }
         ]
     },
@@ -52,7 +57,7 @@ window.HOMEPAGE_CONTENT = {
                     {
                         title: "Modeling visually-guided aim-and-shoot behavior in first-person shooters",
                         status: "Published",
-                        venue: "International Journal of Human-Computer Studies, 199, Article 103503, 2025",
+                        venue: "International Journal of Human-Computer Studies (IJHCS; top-tier HCI journal; JCR Q1 / Scopus Q1), 199, Article 103503, 2025",
                         thumbnail: "assets/images/thumbnail_ans.png",
                         thumbnailAlt: "Thumbnail placeholder for IJHCS paper",
                         authors: [
@@ -66,6 +71,11 @@ window.HOMEPAGE_CONTENT = {
                         ],
                         note: "Collaborative work with NVIDIA",
                         links: {
+                            project: {
+                                show: true,
+                                label: "Project Page",
+                                url: "projects/aim-and-shoot/"
+                            },
                             doi: {
                                 show: true,
                                 label: "DOI",
@@ -86,7 +96,7 @@ window.HOMEPAGE_CONTENT = {
                     {
                         title: "How AI-Based Training Affected the Performance of Professional Go Players",
                         status: "Published",
-                        venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI), 2022",
+                        venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI; premier HCI conference; CORE A*), 2022",
                         thumbnail: "assets/images/tb_chi22.png",
                         thumbnailAlt: "Thumbnail for CHI 2022 paper",
                         authors: [
@@ -132,7 +142,7 @@ window.HOMEPAGE_CONTENT = {
                     {
                         title: "Modeling User Performance in Multi-Lane Moving-Target Acquisition",
                         status: "Published",
-                        venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI), 2025",
+                        venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI; premier HCI conference; CORE A*), 2025",
                         authors: [
                             { name: "Jonghyun Kim" },
                             { name: "Joongseok Kim" },
@@ -153,7 +163,7 @@ window.HOMEPAGE_CONTENT = {
                     {
                         title: "Quantifying Wrist-Aiming Habits with A Dual-Sensor Mouse: Implications for Player Performance and Workload",
                         status: "Published",
-                        venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI), 2024",
+                        venue: "ACM CHI Conference on Human Factors in Computing Systems (CHI; premier HCI conference; CORE A*), 2024",
                         authors: [
                             { name: "Donghyeon Kang" },
                             { name: "Namsub Kim" },
