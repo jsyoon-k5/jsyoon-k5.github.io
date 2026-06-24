@@ -28,11 +28,15 @@
     function anchor(label, url, className) {
         const link = element("a", className, label);
         link.href = url;
-        if (!url.startsWith("#")) {
+        if (opensInNewTab(url)) {
             link.target = "_blank";
             link.rel = "noopener noreferrer";
         }
         return link;
+    }
+
+    function opensInNewTab(url) {
+        return /^(https?:)?\/\//.test(url) || url.startsWith("mailto:") || /\.pdf($|\?)/i.test(url);
     }
 
     function formatAuthors(authors) {
