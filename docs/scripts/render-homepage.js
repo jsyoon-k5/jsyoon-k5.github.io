@@ -136,6 +136,10 @@
         });
         copy.append(actions);
 
+        if (content.profile.contactEmail) {
+            copy.append(element("p", "profile-contact", content.profile.contactEmail));
+        }
+
         if (content.profile.cv && content.profile.cv.lastUpdated) {
             copy.append(renderCvLastUpdated(content.profile.cv));
         }

@@ -27,15 +27,11 @@ window.HOMEPAGE_CONTENT = {
             locale: "en-GB",
             timeZone: "Asia/Seoul"
         },
+        contactEmail: "jsyoon.k5 at gmail.com",
         links: [
             {
                 label: "GitHub",
                 url: "https://github.com/jsyoon-k5",
-                style: "secondary"
-            },
-            {
-                label: "Email",
-                url: "mailto:jsyoon.k5@gmail.com",
                 style: "secondary"
             }
         ]
