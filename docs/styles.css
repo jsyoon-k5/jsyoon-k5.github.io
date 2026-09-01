@@ -168,6 +168,40 @@ a {
     font-size: clamp(2.5rem, 7vw, 4.8rem);
 }
 
+.name-heading {
+    display: block;
+}
+
+.name-details {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 18px;
+    margin: 8px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+.name-detail {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.name-detail-label {
+    color: rgba(248, 250, 247, 0.5);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.name-detail-value {
+    margin: 0;
+    color: rgba(248, 250, 247, 0.8);
+}
+
 .hero-copy p {
     margin: 18px 0 0;
     color: rgba(248, 250, 247, 0.9);
@@ -195,7 +229,19 @@ a {
 }
 
 .hero-copy .profile-contact {
+    margin-top: 18px;
     color: rgba(248, 250, 247, 0.86);
+}
+
+.profile-contact-label {
+    color: rgba(248, 250, 247, 0.62);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.profile-contact + .hero-actions {
+    margin-top: 16px;
 }
 
 .button-link,

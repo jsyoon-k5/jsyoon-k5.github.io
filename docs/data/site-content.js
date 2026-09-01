@@ -7,16 +7,18 @@
 window.HOMEPAGE_CONTENT = {
     profile: {
         name: "June-Seop Yoon",
+        nativeName: "윤준섭",
+        pronunciation: "[dʑun.sʌp̚ jun]",
         headline: "",
         portrait: "assets/images/juneseopy.png",
         portraitAlt: "Portrait of June-Seop Yoon",
         affiliation: {
-            label: "High-Performance HCI Lab (formerly Esports Lab) at Yonsei University",
+            label: "High-Performance HCI Lab (formerly Esports Lab)",
             url: "https://esports.yonsei.ac.kr/"
         },
         summary: [
             "I received my Ph.D. in Computer Science from Yonsei University in August 2026, where I was advised by Prof. Byungjoo Lee at the High-Performance HCI Lab (formerly Esports Lab). I also received my B.Sc. in Computer Science from Yonsei University.",
-            "My research develops computational models of esports players' behavior and applies them to behavior analysis, performance evaluation, and personalized training in gaming and esports. I focus mainly on first-person shooter (FPS) games, shaped by twenty years of experience as an FPS player and by the opportunity to bring more rigorous computational methods to player behavior analysis. I am currently exploring model-based player training, where computational behavior models guide personalized training protocols and feedback for players."
+            "My research lies at the intersection of human-computer interaction (HCI) and artificial intelligence (AI). Specifically, I develop computational models of esports players' behavior based on the computational rationality framework and reinforcement learning, and apply these models to behavior analysis, performance evaluation, and personalized training in gaming and esports. I focus mainly on first-person shooter (FPS) games, shaped by twenty years of experience as an FPS player and by the opportunity to bring more rigorous computational methods to player behavior analysis. I am currently exploring model-based player training, where computational behavior models guide personalized training protocols and feedback for players."
         ],
         cv: {
             label: "Open CV",
@@ -27,6 +29,7 @@ window.HOMEPAGE_CONTENT = {
             locale: "en-GB",
             timeZone: "Asia/Seoul"
         },
+        contactLabel: "CONTACT",
         contactEmail: "jsyoon.k5 at gmail.com",
         links: [
             {

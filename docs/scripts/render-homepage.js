@@ -111,7 +111,32 @@
         if (content.profile.headline) {
             copy.append(element("p", "eyebrow", content.profile.headline));
         }
-        copy.append(element("h1", "", content.profile.name));
+        const nameHeading = element("div", "name-heading");
+        nameHeading.append(element("h1", "", content.profile.name));
+
+        if (content.profile.nativeName || content.profile.pronunciation) {
+            const nameDetails = element("dl", "name-details");
+            if (content.profile.nativeName) {
+                const nativeName = element("div", "name-detail");
+                const nativeNameValue = element("dd", "name-detail-value", content.profile.nativeName);
+                nativeNameValue.lang = "ko";
+                nativeName.append(
+                    element("dt", "name-detail-label", "In Korean"),
+                    nativeNameValue
+                );
+                nameDetails.append(nativeName);
+            }
+            if (content.profile.pronunciation) {
+                const pronunciation = element("div", "name-detail");
+                pronunciation.append(
+                    element("dt", "name-detail-label", "Pronunciation"),
+                    element("dd", "name-detail-value", content.profile.pronunciation)
+                );
+                nameDetails.append(pronunciation);
+            }
+            nameHeading.append(nameDetails);
+        }
+        copy.append(nameHeading);
 
         content.profile.summary.forEach((paragraph, index) => {
             const text = element("p");
@@ -131,6 +156,15 @@
             copy.append(text);
         });
 
+        if (content.profile.contactEmail) {
+            const contact = element("p", "profile-contact");
+            contact.append(
+                element("span", "profile-contact-label", `${content.profile.contactLabel || "CONTACT"}:`),
+                ` ${content.profile.contactEmail}`
+            );
+            copy.append(contact);
+        }
+
         const actions = element("div", "hero-actions");
         if (content.profile.cv) {
             actions.append(anchor(content.profile.cv.label, content.profile.cv.url, "button-link is-primary"));
@@ -139,10 +173,6 @@
             actions.append(anchor(link.label, link.url, `button-link ${link.style === "primary" ? "is-primary" : ""}`));
         });
         copy.append(actions);
-
-        if (content.profile.contactEmail) {
-            copy.append(element("p", "profile-contact", content.profile.contactEmail));
-        }
 
         if (content.profile.cv && content.profile.cv.lastUpdated) {
             copy.append(renderCvLastUpdated(content.profile.cv));
