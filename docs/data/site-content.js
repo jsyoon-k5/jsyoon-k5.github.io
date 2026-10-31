@@ -18,16 +18,12 @@ window.HOMEPAGE_CONTENT = {
         },
         summary: [
             "I received my Ph.D. in Computer Science from Yonsei University in August 2026, where I was advised by Prof. Byungjoo Lee at the High-Performance HCI Lab (formerly Esports Lab). I also received my B.Sc. in Computer Science from Yonsei University.",
-            "My research lies at the intersection of human-computer interaction (HCI) and artificial intelligence (AI). Specifically, I develop computational models of esports players' behavior based on the computational rationality framework and reinforcement learning, and apply these models to behavior analysis, performance evaluation, and personalized training in gaming and esports. I focus mainly on first-person shooter (FPS) games, shaped by twenty years of experience as an FPS player and by the opportunity to bring more rigorous computational methods to player behavior analysis. I am currently exploring model-based player training, where computational behavior models guide personalized training protocols and feedback for players."
+            "My research lies at the intersection of human-computer interaction (HCI) and artificial intelligence (AI). Specifically, I develop computational models of esports players' behavior based on the computational rationality framework and reinforcement learning, and apply these models to behavior analysis, performance evaluation, and personalized training in gaming and esports. I focus mainly on first-person shooter (FPS) games, shaped by nearly two decades of experience as an FPS player and by the opportunity to bring more rigorous computational methods to player behavior analysis.",
+            "My recent work has focused on extending these models toward personalized training. Through this research, I have also become increasingly interested in AI models themselves, and am broadening my research interests to include more fundamental questions in AI, particularly learning and prediction."
         ],
         cv: {
             label: "Open CV",
-            url: "assets/pdfs/CV.pdf",
-            lastUpdatedLabel: "CV last updated",
-            lastUpdated: "22 June 2026",
-            useServedLastModified: true,
-            locale: "en-GB",
-            timeZone: "Asia/Seoul"
+            url: "assets/pdfs/CV.pdf"
         },
         contactLabel: "CONTACT",
         contactEmail: "jsyoon.k5 at gmail.com",
